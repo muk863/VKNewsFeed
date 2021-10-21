@@ -150,9 +150,9 @@
                 <outlet property="dateLabel" destination="uOO-M5-agh" id="PmO-9v-H0V"/>
                 <outlet property="iconImageView" destination="vWe-Lj-7Ky" id="4UU-Z6-PwC"/>
                 <outlet property="likesLabel" destination="C9i-Mg-sVl" id="aCF-YK-V4d"/>
-                <outlet property="namelabel" destination="4K2-pS-sGv" id="VSM-2H-ejd"/>
+                <outlet property="nameLabel" destination="4K2-pS-sGv" id="VSM-2H-ejd"/>
                 <outlet property="postImageView" destination="Gjl-iA-3W2" id="hXD-1R-QVV"/>
-                <outlet property="postlabel" destination="Zmt-dP-N4H" id="5Gw-US-Wgq"/>
+                <outlet property="postLabel" destination="Zmt-dP-N4H" id="5Gw-US-Wgq"/>
                 <outlet property="shareslabel" destination="mLz-zh-CrV" id="8GI-Aa-8N5"/>
                 <outlet property="viewsLabel" destination="NLC-cL-pKv" id="vfa-ey-OPT"/>
             </connections>

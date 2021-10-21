@@ -40,9 +40,9 @@ class NewsfeedCell: UITableViewCell {
     
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var iconImageView: WebImageView!
-    @IBOutlet weak var namelabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var postlabel: UILabel!
+    @IBOutlet weak var postLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     @IBOutlet weak var shareslabel: UILabel!
@@ -70,15 +70,15 @@ class NewsfeedCell: UITableViewCell {
     
     func set(viewModel: FeedCellViewModel) {
         iconImageView.set(imageURL: viewModel.iconUrlString)
-        namelabel.text = viewModel.name
+        nameLabel.text = viewModel.name
         dateLabel.text = viewModel.date
-        postlabel.text = viewModel.text
+        postLabel.text = viewModel.text
         likesLabel.text = viewModel.likes
         commentsLabel.text = viewModel.comments
         shareslabel.text = viewModel.shares
         viewsLabel.text = viewModel.views
         
-        postlabel.frame = viewModel.sizes.postLabelFrame
+        postLabel.frame = viewModel.sizes.postLabelFrame
         postImageView.frame = viewModel.sizes.attachmentFrame
         bottomView.frame = viewModel.sizes.bottomViewFrame
         if let photoAttachment = viewModel.photoAttachment {

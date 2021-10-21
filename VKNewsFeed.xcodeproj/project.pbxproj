@@ -11,6 +11,9 @@
 		3D20846327216B7E0015DF21 /* UIViewController + Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D20846227216B7E0015DF21 /* UIViewController + Storyboard.swift */; };
 		3D2084652721846E0015DF21 /* NewsfeedCellLayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2084642721846E0015DF21 /* NewsfeedCellLayoutCalculator.swift */; };
 		3D208467272193750015DF21 /* String + Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D208466272193750015DF21 /* String + Height.swift */; };
+		3D2084692721CA070015DF21 /* NewsfeedCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2084682721CA070015DF21 /* NewsfeedCodeCell.swift */; };
+		3D20846B2721D23B0015DF21 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D20846A2721D23B0015DF21 /* Constraints.swift */; };
+		3D20846D2721FDA70015DF21 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D20846C2721FDA70015DF21 /* Constants.swift */; };
 		3D37187E271D5D8400868635 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D37187D271D5D8400868635 /* AppDelegate.swift */; };
 		3D371880271D5D8400868635 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D37187F271D5D8400868635 /* SceneDelegate.swift */; };
 		3D371882271D5D8400868635 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D371881271D5D8400868635 /* AuthViewController.swift */; };
@@ -39,6 +42,9 @@
 		3D20846227216B7E0015DF21 /* UIViewController + Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Storyboard.swift"; sourceTree = "<group>"; };
 		3D2084642721846E0015DF21 /* NewsfeedCellLayoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedCellLayoutCalculator.swift; sourceTree = "<group>"; };
 		3D208466272193750015DF21 /* String + Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Height.swift"; sourceTree = "<group>"; };
+		3D2084682721CA070015DF21 /* NewsfeedCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedCodeCell.swift; sourceTree = "<group>"; };
+		3D20846A2721D23B0015DF21 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		3D20846C2721FDA70015DF21 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3D37187A271D5D8400868635 /* VKNewsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNewsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D37187D271D5D8400868635 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D37187F271D5D8400868635 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 				3D20846227216B7E0015DF21 /* UIViewController + Storyboard.swift */,
 				3D208460272165600015DF21 /* WebImageView.swift */,
 				3D208466272193750015DF21 /* String + Height.swift */,
+				3D20846A2721D23B0015DF21 /* Constraints.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -171,7 +178,9 @@
 			children = (
 				3DE4E117271EEE76008AF065 /* NewsfeedCell.swift */,
 				3DE4E119271EEEE3008AF065 /* NewsfeedCell.xib */,
+				3D2084682721CA070015DF21 /* NewsfeedCodeCell.swift */,
 				3D2084642721846E0015DF21 /* NewsfeedCellLayoutCalculator.swift */,
+				3D20846C2721FDA70015DF21 /* Constants.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -311,6 +320,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D371882271D5D8400868635 /* AuthViewController.swift in Sources */,
+				3D20846D2721FDA70015DF21 /* Constants.swift in Sources */,
+				3D20846B2721D23B0015DF21 /* Constraints.swift in Sources */,
 				3D3718B1271DA7C500868635 /* NewsfeedViewController.swift in Sources */,
 				3D20846327216B7E0015DF21 /* UIViewController + Storyboard.swift in Sources */,
 				3D37187E271D5D8400868635 /* AppDelegate.swift in Sources */,
@@ -327,6 +338,7 @@
 				3D37189F271D82EE00868635 /* API.swift in Sources */,
 				3D2084652721846E0015DF21 /* NewsfeedCellLayoutCalculator.swift in Sources */,
 				3D3718A2271D994F00868635 /* FeedResponse.swift in Sources */,
+				3D2084692721CA070015DF21 /* NewsfeedCodeCell.swift in Sources */,
 				3DE4E118271EEE76008AF065 /* NewsfeedCell.swift in Sources */,
 				3D3718B2271DA7C500868635 /* NewsfeedInteractor.swift in Sources */,
 			);
