@@ -23,7 +23,7 @@ class NewsfeedCell: UITableViewCell {
     
     static let reuseId = "NewsfeedCell"
     
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var iconImageView: WebImageView!
     @IBOutlet weak var namelabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var postlabel: UILabel!
@@ -32,11 +32,12 @@ class NewsfeedCell: UITableViewCell {
     @IBOutlet weak var shareslabel: UILabel!
     @IBOutlet weak var viewsLabel: UILabel!
     
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     func set(viewModel: FeedCellViewModel) {
+        iconImageView.set(imageURL: viewModel.iconUrlString)
         namelabel.text = viewModel.name
         dateLabel.text = viewModel.date
         postlabel.text = viewModel.text
@@ -45,4 +46,5 @@ class NewsfeedCell: UITableViewCell {
         shareslabel.text = viewModel.shares
         viewsLabel.text = viewModel.views
     }
+    
 }
