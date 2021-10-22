@@ -13,20 +13,27 @@ class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UIColle
     var photos = [FeedCellPhotoAttachementViewModel]()
     
     init() {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        super.init(frame: .zero, collectionViewLayout: layout)
+        let rowLayout = RowLayout()
+        super.init(frame: .zero, collectionViewLayout: rowLayout)
         
         delegate = self
         dataSource = self
         
-        backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+        backgroundColor = UIColor.white
+        
+        showsHorizontalScrollIndicator = false
+        showsVerticalScrollIndicator = false
         
         register(GalleryCollectionViewCell.self, forCellWithReuseIdentifier: GalleryCollectionViewCell.reuseId)
+        
+        if let rowLayout = collectionViewLayout as? RowLayout {
+            rowLayout.delegate = self
+        }
     }
     
     func set(photos: [FeedCellPhotoAttachementViewModel]) {
         self.photos = photos
+        contentOffset = CGPoint.zero
         reloadData()
     }
     
@@ -45,4 +52,12 @@ class GalleryCollectionView: UICollectionView, UICollectionViewDelegate, UIColle
     }
 }
 
+extension GalleryCollectionView: RowLayoutDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, photoAtIndexPath indexPath: IndexPath) -> CGSize {
+        let width = photos[indexPath.row].width
+        let height = photos[indexPath.row].height
+        return CGSize(width: width, height: height)
+    }
+}
 

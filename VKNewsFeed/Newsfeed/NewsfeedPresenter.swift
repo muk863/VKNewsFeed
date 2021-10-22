@@ -52,7 +52,7 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
         
         //let isFullSized = revealdedPostIds.contains(feedItem.postId) // краткий вариант записи
         
-        let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachments: photoAttachments, isFullSizePost: isFullSized)
+        let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachments: photoAttachments, isFullSizedPost: isFullSized)
 
         return FeedViewModel.Cell.init(postId: feedItem.postId,
                                        iconUrlString: profile.photo,
