@@ -9,7 +9,7 @@
 import UIKit
 
 protocol NewsfeedPresentationLogic {
-  func presentData(response: Newsfeed.Model.Response.ResponseType)
+    func presentData(response: Newsfeed.Model.Response.ResponseType)
 }
 
 class NewsfeedPresenter: NewsfeedPresentationLogic {
@@ -18,24 +18,27 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
     var cellLayoutCalculator: FeedCellLayoutCalculatorProtocol = FeedCellLayoutCalculator()
     
     let dateFormatter: DateFormatter = {
-       let dt = DateFormatter()
+        let dt = DateFormatter()
         dt.locale = Locale(identifier: "ru_RU")
         dt.dateFormat = "d MMM 'в' HH:mm"
         return dt
     }()
-  
-  func presentData(response: Newsfeed.Model.Response.ResponseType) {
-  
-    switch response {
-    case .presentNewsfeed(let feed, let revealdedPostIds):
-                
-        let cells = feed.items.map { (feedItem) in
-            cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups, revealdedPostIds: revealdedPostIds)
+    
+    func presentData(response: Newsfeed.Model.Response.ResponseType) {
+        
+        switch response {
+        case .presentNewsfeed(let feed, let revealdedPostIds):
+            
+            let cells = feed.items.map { (feedItem) in
+                cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups, revealdedPostIds: revealdedPostIds)
+            }
+            let feedViewModel = FeedViewModel.init(cells: cells)
+            viewController?.displayData(viewModel: Newsfeed.Model.ViewModel.ViewModelData.displayNewsfeed(feedViewModel: feedViewModel))
+        case .presentUserInfo(user: let user):
+            let userViewModel = UserViewModel.init(photoUrlString: user?.photo100)
+            viewController?.displayData(viewModel: Newsfeed.Model.ViewModel.ViewModelData.displayUser(userViewModel: userViewModel))
         }
-        let feedViewModel = FeedViewModel.init(cells: cells)
-        viewController?.displayData(viewModel: Newsfeed.Model.ViewModel.ViewModelData.displayNewsfeed(feedViewModel: feedViewModel))
     }
-  }
     
     private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group], revealdedPostIds: [Int]) -> FeedViewModel.Cell {
         
@@ -53,7 +56,7 @@ class NewsfeedPresenter: NewsfeedPresentationLogic {
         //let isFullSized = revealdedPostIds.contains(feedItem.postId) // краткий вариант записи
         
         let sizes = cellLayoutCalculator.sizes(postText: feedItem.text, photoAttachments: photoAttachments, isFullSizedPost: isFullSized)
-
+        
         return FeedViewModel.Cell.init(postId: feedItem.postId,
                                        iconUrlString: profile.photo,
                                        name: profile.name,
