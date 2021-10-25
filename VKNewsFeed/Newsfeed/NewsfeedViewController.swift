@@ -17,9 +17,11 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic, NewsfeedCo
     var interactor: NewsfeedBusinessLogic?
     var router: (NSObjectProtocol & NewsfeedRoutingLogic)?
     
-    private var feedViewModel = FeedViewModel.init(cells: [])
+    private var feedViewModel = FeedViewModel.init(cells: [], footerTitle: nil)
     
     private var titleView = TitleView()
+    private lazy var footerView = FooterView()
+    
     private var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -72,6 +74,7 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic, NewsfeedCo
         table.backgroundColor = .clear
         
         table.addSubview(refreshControl)
+        table.tableFooterView = footerView
     }
     
     private func setupTopBars() {
@@ -89,10 +92,13 @@ class NewsfeedViewController: UIViewController, NewsfeedDisplayLogic, NewsfeedCo
         switch viewModel {
         case .displayNewsfeed(let feedViewModel):
             self.feedViewModel = feedViewModel
+            footerView.setTitle(feedViewModel.footerTitle)
             table.reloadData()
             refreshControl.endRefreshing()
         case .displayUser(userViewModel: let userViewModel):
             titleView.set(userViewModel: userViewModel)
+        case .displayFooterLoader:
+            footerView.showLoader()
         }
     }
     
