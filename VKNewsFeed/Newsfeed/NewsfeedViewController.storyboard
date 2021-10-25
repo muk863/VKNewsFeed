@@ -16,8 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IhF-Z5-Eaj" customClass="GradientView" customModule="VKNewsFeed" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="1" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="1" green="0.81568627450980391" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nsh-OS-iRf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="Qs9-97-7cT"/>
@@ -26,13 +39,12 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="nsh-OS-iRf" secondAttribute="top" constant="44" id="YEs-Ht-ThW"/>
-                            <constraint firstItem="nsh-OS-iRf" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="bGa-gU-Yog"/>
-                            <constraint firstItem="nsh-OS-iRf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dQh-6E-CC4"/>
-                            <constraint firstItem="nsh-OS-iRf" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="34" id="mc9-Tf-cma"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nsh-OS-iRf" secondAttribute="trailing" id="uMv-vr-jEV"/>
+                            <constraint firstItem="nsh-OS-iRf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="HL7-GI-CbA"/>
+                            <constraint firstItem="nsh-OS-iRf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XN1-x8-b9k"/>
+                            <constraint firstItem="nsh-OS-iRf" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Y8i-ty-eLN"/>
+                            <constraint firstItem="nsh-OS-iRf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="eUf-Td-dHl"/>
                         </constraints>
                     </view>
                     <connections>
@@ -48,8 +60,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
